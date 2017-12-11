@@ -17,12 +17,15 @@
 		value: 0,
 		counter: 0,
 	}
+		var	gem4 ={
+		value: 0,
+		counter: 0,
+	}
 
 $(document).ready(function(){
 
-$("#gem1").hide();
-$("#gem2").hide();
-$("#gem3").hide();
+$(".gems").hide();
+
 
 
 	function gamestart(){
@@ -30,14 +33,14 @@ $("#gem3").hide();
 		gem1.value =  Math.floor(Math.random() * 12) +1 ;
 		gem2.value =  Math.floor(Math.random() * 12) +1 ;	
 		gem3.value =  Math.floor(Math.random() * 12) +1 ;
+		gem4.value =  Math.floor(Math.random() * 12) +1 ;
 		stats.score = 0 ;
 		gem1.counter = 0 ;
 		gem2.counter = 0 ;
 		gem3.counter = 0 ;
+		gem4.counter = 0 ;
 		$("#start").hide();
-			$("#gem1").show();
-			$("#gem2").show();
-				$("#gem3").show();
+		$(".gems").show();
 
 	}
 	function gamelose(){
@@ -46,10 +49,25 @@ $("#gem3").hide();
 		$("#counter1").empty();
 		$("#counter2").empty();
 		$("#counter3").empty();
+		$("#counter4").empty();
 		$("#score").empty();
-		$("#gem1").hide();
-			$("#gem2").hide();
-				$("#gem3").hide();
+		$(".gems").hide();
+	}
+	function gameplay(){
+		if(stats.gemPile < stats.score){
+				stats.loses ++
+				$("#loses").empty().append(stats.loses);
+				gamelose();
+				
+			
+			}
+			if (stats.gemPile === stats.score) {
+				stats.wins ++
+				
+				$("#wins").empty().append(stats.wins);
+				gamelose();
+				
+			}
 	}
 
 
@@ -59,27 +77,13 @@ $("#gem3").hide();
 		console.log(stats.gemPile);
 	});
 
-
 		$("#gem1").click(function(){
 			stats.score = stats.score + gem1.value;
 			gem1.counter ++ ;
 			$("#counter1").empty();
 			$("#counter1").append(gem1.counter);
 			$("#score").empty().append(stats.score);
-			if(stats.gemPile < stats.score){
-				stats.loses ++
-				$("#loses").empty().append(stats.loses);
-				gamelose();
-				
-			
-			}
-			if (stats.gemPile === stats.score) {
-				stats.wins ++
-				
-				$("#wins").empty().append(stats.wins);
-				gamelose();
-				
-			}
+			gameplay();
 			
 		});
 		$("#gem2").click(function(){
@@ -88,19 +92,8 @@ $("#gem3").hide();
 			$("#counter2").empty();
 			$("#counter2").append(gem2.counter);
 			$("#score").empty().append(stats.score);
-			if(stats.gemPile < stats.score){
-				stats.loses ++
-				$("#loses").empty().append(stats.loses);
-				gamelose();
-				
-			
-			}
-			if (stats.gemPile === stats.score) {
-				stats.wins ++
-				$("#wins").empty().append(stats.wins);
-				gamelose();
-				
-			}
+			gameplay();
+
 			
 		});
 
@@ -110,19 +103,16 @@ $("#gem3").hide();
 			$("#counter3").empty();
 			$("#counter3").append(gem3.counter);
 			$("#score").empty().append(stats.score);
-			if(stats.gemPile < stats.score){
-				stats.loses ++
-				$("#loses").empty().append(stats.loses);
-				gamelose();
-				
+			gameplay();
 			
-			}
-			if (stats.gemPile === stats.score) {
-				stats.wins ++
-				$("#wins").empty().append(stats.wins);
-				gamelose();
-				
-			}
+		});
+		$("#gem4").click(function(){
+			stats.score = stats.score + gem3.value;
+			gem4.counter ++ ;
+			$("#counter4").empty();
+			$("#counter4").append(gem4.counter);
+			$("#score").empty().append(stats.score);
+			gameplay();
 			
 		});
 
