@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>The game of GEMS</title>
+	<link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
+
+
+</head>
+<body>
+	<header> <h1 id="title">The game of GEMS!</h1></header>
+<div class="container">
+<div class="row">
+	<div class="col-sm-12 col-lg-6 ">
+	<span id="directions">
+		<h2 class="text-center">How to play </h2>
+			
+				<p>The gems below have a hidden value!
+				Your goal is to use them to reach the target score
+				if you go over to target score you lose. Best of luck!</p>
+</div>
+				<div class="col-sm-12 col-lg-6 ">
+
+					<h2 class="text-center">Stats!</h2><br>
+					<h2 class="text-center"><button id="start" type="button" class="btn btn-primary"> Start </button>Wins:<span id="wins"></span> Loses: <span id="loses"></span></h2>
+
+
+	</div>
+			
+	</span>
+
+	</div>
+</div>
+<div class="container">
+<div class="row" class="game">
+	<div class="col-sm-12 col-lg-6">
+		<img id="gempile" class="img-responsive" src="assets/images/gempile.png">
+		
+	</div>
+	<div class="col-sm-12 col-lg-6">
+
+		<img class="gems" id="gem1" src="assets/images/gem1.jpg">
+		<span id="counter1"></span>
+
+		<img class="gems" id="gem2" src="assets/images/gem2.jpg">
+		<span id="counter2"></span>
+
+		<img class="gems" id="gem3" src="assets/images/gem3.jpg">
+		<span id="counter3"></span>
+
+	</div>
+	<div class="row"	>
+		<div class="col-lg-8 ">
+			<span>Gem pile Value:</span><span id="gemValue"></span>
+		<span>Player pile value:</span><span id="score"></span>
+		</div>
+	</div>
+	
+
+
+
+</div>
+</div>
+	
+</body>
+</html>

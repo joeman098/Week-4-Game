@@ -1,0 +1,23 @@
+header{
+	background-color: lightblue;
+	border-style: solid;
+	text-align: center;
+	width: 50%;
+	margin-left: 25%;
+}
+#gempile{
+	width: 350px;
+	height: 250px;
+	
+}
+.gems{
+	height: 150px;
+	width: 150px;
+}
+
+.container{
+	border-style: solid;
+}
+body{
+	font-family: 'Permanent Marker', cursive;
+}
